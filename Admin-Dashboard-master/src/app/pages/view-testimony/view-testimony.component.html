@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>View Testimonial</nb-card-header>
+      <nb-card-body>
+  <form  #testimonialForm="ngForm"  >
+    <div class="form-group row">
+    <label for="" class="label col-lg-2 col-form-label">Name :</label><br>
+  <input class="form-control col-lg-10" type="text" #name='ngModel' name="name" id="name" [(ngModel)]="testimonialItem.name" placeholder="" readonly> 
+  </div> 
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Position :</label><br>
+  <input class="form-control col-lg-10" type="text" #position='ngModel' name="position" id="position" [(ngModel)]="testimonialItem.position" placeholder="Position" readonly >
+  </div>
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Organisation :</label><br>
+  <input class="form-control col-lg-10" type="text" #organization='ngModel' name="organisation" id="organisation" [(ngModel)]="testimonialItem.organisation" placeholder="Organization" readonly>
+  </div>
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Testimonial :</label><br>
+  <div class=" col-lg-10">
+    <textarea rows="6" cols="95" class='width-100' #testimonial='ngModel' id="testimonial" name="testimonial" [(ngModel)]="testimonialItem.testimonial" readonly></textarea>
+    </div> 
+  </div>
+  <div class="form-group row">
+      <label for="" class="label col-lg-2 col-form-label">Course Title :</label><br>
+      <select class="form-control col-lg-10 " #course_title='ngModel' [(ngModel)]="testimonialItem.course_title" name="course_title" id="course_title" placeholder="" readonly > 
+          <option selected>--Choose--</option>
+          <option value="Full Stack Developer">Full Stack Developer</option> 
+          <option value="Software Testing">Software Testing</option> 
+          <option value="Data Science And Analytics">Data Science And Analytics</option> 
+          <option value="Digital Marketting">Digital Marketting</option>
+      </select>
+    </div>
+  
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-labe">Image :</label><br>
+  <input type="text" class="form-control col-lg-10" value='{{testimonialItem.image}}'  readonly id="exampleFormControlInput1" placeholder="">
+  </div>
+  <br>
+  <div class="form-group row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+    <button type="button" class="btn btn-danger btn-sm" (click)='closeForm()'>Close</button>&nbsp;
+    <!-- <button type="submit" id="submit"  [disabled]="testimonialForm.form.invalid" class="btn btn-outline-primary text-center addtestimonial"> Add </button> -->
+  </div>
+  </div>  
+  </form>
+</nb-card-body>
+</nb-card>
+</div>
+</div>
+  

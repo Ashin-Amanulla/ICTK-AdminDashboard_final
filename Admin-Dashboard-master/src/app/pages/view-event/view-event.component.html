@@ -1,0 +1,85 @@
+
+<div style="width:60rem;">
+    <div class=" col-lg-12 " >
+        <h1 class="txt-center">View Event</h1>
+        <form action=""   >
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Event Name</label> <br>
+            <input class="form-control col-lg-10" type="text" name="name" id="name" [(ngModel)]="eventItem.name"  placeholder="Event Name" disabled readonly/><br>
+            </div>
+            <!-- event short detail -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Event Short Detail</label> <br>
+            <textarea rows="5" cols="94" class='width-100'  [(ngModel)]="eventItem.shortdetails"   name="shortdetails" id="shortdetails"  disabled readonly></textarea>
+            </div>
+
+            <!-- event More detail -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Event More Detail</label> <br>
+            <textarea rows="5" cols="94" class='width-100' [(ngModel)]="eventItem.moredetails" name="moredetails" id="moredetails"   disabled readonly></textarea>
+            </div>
+
+             <!-- Box2 detail -->
+             <div class="form-group row">
+             <label for="" class="label col-lg-2 col-form-label">Box 2</label> <br>
+             <textarea rows="5" cols="94" class='width-100'  [(ngModel)]="eventItem.boxdetails" name="boxdetails" id="boxdetails"  disabled readonly></textarea>
+             </div>
+
+             <!-- Coordinator Details -->
+             <div class="form-group row">
+             <label for="" class="label col-lg-2 col-form-label">Coordinators Details </label> <br>
+             <textarea rows="5" cols="94" class='width-100' [(ngModel)]="eventItem.coordinatorsdetail" name="coordinatorsdetail" id="coordinatordetails"    disabled readonly></textarea>
+             </div>
+
+             <!-- Registration LInk -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Registration Link</label>
+            <input class="form-control col-lg-10" type="text" name="registrationlink" id="registrationlink" disabled [(ngModel)]="eventItem.registrationlink" placeholder="Registration Link" required/><br>
+            </div>
+
+             <!-- Broucher Link -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Brouchure Link</label>
+            <input class="form-control col-lg-10" type="text" [(ngModel)]="eventItem.brouchurelink" disabled name="brouchurelink" id="brouchurelink"  placeholder="Brouchure Link" required/><br>
+            </div>
+
+             <!-- Program Schedule -->
+             <div class="form-group row">
+             <label for="" class="label col-lg-2 col-form-label">Program Schedule</label>
+             <input class="form-control col-lg-10" type="text" [(ngModel)]="eventItem.programschedule" disabled name="programschedule" id="programschedule"  placeholder="Program Schedule" required/><br>
+             </div>
+
+              <!-- Speakers List -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Speakers List</label>
+            <input class="form-control col-lg-10" type="text" [(ngModel)]="eventItem.speakerslist" disabled name="speakerslist" id="speakerslist"  placeholder="Speakers List" required/><br>
+            </div>
+
+            <!-- Show button -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Show Button</label>
+            <input class="form-control col-lg-2  form-check-input" type="checkbox" [(ngModel)]="eventItem.button" disabled name="button" id="button"  required/><br>
+            </div>
+
+            <!-- Date -->
+            <div class="form-group row">
+            <label for="" class="label col-lg-2 col-form-label">Date</label>
+            <input class="form-control col-lg-2  form-check-input" type="date" [(ngModel)]="eventItem.date" name="date" id="date" disabled  required/><br>
+            </div>
+
+             <!-- image Preview -->
+            <div class=" col-md-12 ">
+            <label for="PreviewAuthorImage" class="form-label  ">Image Preview&nbsp;</label><br>
+            <span id="PreviewAuthorImage"></span>
+            <img class="form-control" src="assets/images/{{imgPrev}}" style="width: 20em; height: 20em;" >
+            </div> 
+             <br>
+            <div class="col-lg-10 d-flex justify-content center ">
+                <button type="button" class="btn btn-danger btn-lg" close (click)='closeForm()'>Close</button>
+              </div>
+            
+        </form>
+    </div>
+</div>
+
+

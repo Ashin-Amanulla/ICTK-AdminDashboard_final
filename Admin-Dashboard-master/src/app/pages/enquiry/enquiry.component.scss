@@ -1,0 +1,27 @@
+@import '../../@theme/styles/themes';
+
+.anchor{
+    display: flex;
+    justify-content:space-between;
+    cursor: pointer;
+  }
+  
+  
+  .anchor a{
+    padding-right: 10px;
+   
+  }
+
+  .plus{
+    float: right !important;
+    cursor: pointer;
+  }
+
+
+  .hide-table-col{
+    display:none;
+  }
+
+  .unresponded-enquiry{
+     font-weight: bold; 
+  }

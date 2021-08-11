@@ -1,0 +1,73 @@
+<div style="width:60rem;">
+    <div class=" col-lg-12 ">
+        <h1 class="txt-center">Add Event</h1>
+        <form action="" (ngSubmit)="addevent()">
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Event Name</label> <br>
+                <input class="form-control col-lg-10" type="text" name="name" id="name" [(ngModel)]="eventDetails.name"
+                    placeholder="Event Name" required /><br>
+            </div>
+            <!-- event short detail -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Event Short Detail</label> <br>
+                <ckeditor required [config]="{ extraPlugins: 'divarea', height: '100',width:'780' }"
+                    [(ngModel)]="eventDetails.shortdetails" name="shortdetails" id="shortdetails"></ckeditor>
+            </div>
+
+            <!-- event More detail -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Event More Detail</label> <br>
+                <ckeditor required [config]="{ extraPlugins: 'divarea', height: '100',width:'780' }"
+                    [(ngModel)]="eventDetails.moredetails" name="moredetails" id="moredetails"></ckeditor>
+            </div>
+
+            <!-- Box2 detail -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Date and Location Details</label> <br>
+                <ckeditor required [config]="{ extraPlugins: 'divarea', height: '100',width:'780' }"
+                    [(ngModel)]="eventDetails.boxdetails" name="boxdetails" id="boxdetails"></ckeditor>
+            </div>
+
+            <!-- Coordinator Details -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Coordinators Details </label> <br>
+                <ckeditor required [config]="{ extraPlugins: 'divarea', height: '100',width:'780' }"
+                    [(ngModel)]="eventDetails.coordinatorsdetail" name="coordinatorsdetail" id="coordinatordetails">
+                </ckeditor>
+            </div>
+
+            <!-- Registration LInk -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Registration Link</label>
+                <input class="form-control col-lg-10" type="text" name="registrationlink" id="registrationlink"
+                    [(ngModel)]="eventDetails.registrationlink" placeholder="Registration Link" required /><br>
+            </div>
+
+         
+
+
+
+            <!-- Date -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Date</label>
+                <input class="form-control col-lg-2  form-check-input" type="date" [(ngModel)]="eventDetails.date"
+                    name="date" id="date" required /><br>
+            </div>
+
+            <!-- event image -->
+            <div class="form-group row">
+                <label for="" class="label col-lg-2 col-form-label">Image</label>
+                <input class="form-control col-lg-10" type="file" (change)="selectImage($event)"
+                    [(ngModel)]="eventDetails.image" name="image" id="image" style="height: 2.6rem;" placeholder="Image"
+                    required><br>
+            </div>
+
+            <!-- add button -->
+            <br>
+            <div class="d-flex justify-content-center">
+                <button type="submit" id="submit" class="btn btn-outline-primary text-center addevent " *ngIf='ifActive'>Add</button>
+            </div>
+
+        </form>
+    </div>
+</div>

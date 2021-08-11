@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>Add Testimonial</nb-card-header>
+      <nb-card-body>
+  <form action="" #testimonialForm="ngForm" (ngSubmit)="addTestimonial()"  >
+    <div class="form-group row">
+    <label for="" class="label col-lg-2 col-form-label">Name :</label><br>
+    <span *ngIf="(name.invalid && (name.dirty || name.touched|| submitted))" >
+      <div *ngIf="name.errors?.required" >
+      <p class='error-display'>Name is required</p>
+      </div>
+  </span> 
+  <input class="form-control col-lg-10" type="text" #name='ngModel' name="name" id="name" [(ngModel)]="testimonialDetails.name" placeholder="" required> 
+  </div> 
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Position :</label><br>
+  <span *ngIf="(position.invalid && (position.dirty || position.touched|| submitted))" >
+    <div *ngIf="position.errors?.required" >
+    <p class='error-display'>Position is required</p>
+    </div>
+  </span>    
+  <input class="form-control col-lg-10" type="text" #position='ngModel' name="position" id="position" [(ngModel)]="testimonialDetails.position" placeholder="Position" required >
+  </div>
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Organisation :</label><br>
+  <span *ngIf="(organization.invalid && (organization.dirty || organization.touched|| submitted))" >
+    <div *ngIf="organization.errors?.required" >
+    <p class='error-display'>Organization is required</p>
+    </div>
+  </span> 
+  <input class="form-control col-lg-10" type="text" #organization='ngModel' name="organisation" id="organisation" [(ngModel)]="testimonialDetails.organisation" placeholder="Organization" required>
+  </div>
+
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-label">Testimonial :</label><br>
+  <div class=" col-lg-10">
+    <span *ngIf="(testimonial.invalid && (testimonial.dirty || testimonial.touched|| submitted))" >
+      <div *ngIf="testimonial.errors?.required" >
+      <p class='error-display'>Testimonial is required</p>
+      </div>
+    </span>
+    <textarea rows="6" cols="95" class='width-100' #testimonial='ngModel' id="testimonial" name="testimonial" [(ngModel)]="testimonialDetails.testimony" ></textarea>
+    </div> 
+  </div>
+  <div class="form-group row">
+      <label for="" class="label col-lg-2 col-form-label">Course Title :</label><br>
+      <span *ngIf="(course_title.invalid && (course_title.dirty || course_title.touched|| submitted))" >
+        <div *ngIf="course_title.errors?.required" >
+        <p class='error-display'>Title is required</p>
+        </div>
+      </span>
+      <select class="form-control col-lg-10 " #course_title='ngModel' [(ngModel)]="testimonialDetails.course_title" name="course_title" id="course_title" placeholder="Course_title" required > 
+          <option selected>--Choose--</option>
+          <option value="Full Stack Developer">Full Stack Develoment</option> 
+          <option value="Software Testing">Software Testing</option> 
+          <option value="Data Science And Analytics">Data Science And Analytics</option> 
+          <option value="Digital Marketting">Digital Marketting</option>
+      </select>
+    </div>
+  
+  <div class="form-group row">
+  <label for=""class="label col-lg-2 col-form-labe">Image :</label><br>
+  <span *ngIf="(img.invalid && (img.dirty || img.touched|| submitted))" >
+    <div *ngIf="img.errors?.required" >
+    <p class='error-display'>Image is required</p>
+    </div>
+  </span>
+  <input class="form-control col-lg-10" type="file" name="image" id="image" #img='ngModel'  (change)="selectImage($event)" [(ngModel)]="testimonialDetails.image" style="height:2.6rem;"  placeholder="Image" required>
+</div>
+  <br>
+  <div class="form-group row">
+    <div class="col-lg-6"></div>
+    <div class="col-lg-6">
+    <button type="button" class="btn btn-danger btn-sm" (click)='closeForm()'>Close</button>&nbsp;
+    <button type="submit" class="btn btn-primary btn-sm" *ngIf='ifActive' (mousedown)="submitted=true">Add Testimonial</button>
+    <!-- <button type="submit" id="submit"  [disabled]="testimonialForm.form.invalid" class="btn btn-outline-primary text-center addtestimonial"> Add </button> -->
+  </div>
+  </div>  
+  </form>
+</nb-card-body>
+</nb-card>
+</div>
+</div>
+  

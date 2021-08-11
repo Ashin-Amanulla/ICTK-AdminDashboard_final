@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-lg-12">
+      <nb-card>
+        <nb-card-header class='text-center'> <h5>Partnership Applications</h5> 
+            <a (click)="exportexcel()"class="plus">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </a>    
+        </nb-card-header>
+        <nb-card-body>
+            <nb-list> 
+                <nb-list-item>
+                    <!-- <h6 style ='width:5rem'><ion-icon name="search-outline"></ion-icon></h6> -->
+
+                    <span style ='width:35rem'><input type="text"  class="search-input" placeholder="Search by Partner Name" [(ngModel)]="srchName" id="listSearch1"></span>
+                    <span style ='width:15rem'>
+                        <input matInput  placeholder="Pick From Date" [nbDatepicker]="ngmodel" [(ngModel)]="fromDate" (change)="filterArray($event)">
+                        <nb-datepicker #ngmodel ></nb-datepicker>                        
+                    </span>
+                    <span style ='width:15rem'>
+                        <input  [min]="fromDate" matInput  placeholder="Pick To Date" [nbDatepicker]="formcontrol" [(ngModel)]="toDate" (change)="filterArray($event)">
+                        <nb-datepicker #formcontrol></nb-datepicker>   
+                  
+                    </span>
+                    <div>
+                    <a (click)="filterArray($event)">
+                            <ion-icon name="search-outline"></ion-icon>
+                    </a>
+                    <a (click)="resetSearch()">
+                        <ion-icon name="refresh-outline"></ion-icon>
+                    </a>   
+                    </div>
+                </nb-list-item>    
+            </nb-list>
+            <table class="table " id="excel-table">
+                <thead>
+                <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Address</th>
+                <th scope="col">Firm</th>
+                <th scope="col" class='hide-table-col'>District</th>
+                <th scope="col" class='hide-table-col'>Office Space</th>
+                <th scope="col" class='hide-table-col'>Report</th>
+                <th scope="col" class='hide-table-col'>Expectation</th>
+                <th scope="col">Profile</th>
+                <th scope="col">Employee Count</th>
+                <th scope="col">Registerd Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let user of partnerApplns | searchStaffName: srchName | searchCourseCategory : srchCategory; let i=index;">
+                <!-- <th scope="row">{{ i + 1 }}</th> -->
+                <td>{{user.name}}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.firm }}</td>
+                <td class='hide-table-col'>{{ user.district }}</td>
+                <td class='hide-table-col'>{{ user.officeSpace }}</td>
+                <td class='hide-table-col'>{{ user.report }}</td>
+                <td class='hide-table-col'>{{ user.expect }}</td>
+                <td>{{ user.profile }}</td>
+                <td>{{ user.employeeCount }}</td>
+                <td>{{ user.creation_date| date:'fullDate'}}</td>
+                </tr>
+                </tbody>
+            </table>
+         </nb-card-body>
+     </nb-card>
+   </div>
+</div>

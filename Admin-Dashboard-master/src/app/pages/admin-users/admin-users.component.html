@@ -1,0 +1,52 @@
+
+<div class="lists row">
+    <div class="col-md-12 col-lg-12 col-xxxl-6">
+        <nb-card class="list-card">
+            <nb-card-header> <h5>Admin Users</h5> 
+                
+                <a (click)="addAdmin()"class="plus">
+                    <ion-icon name="add-outline"></ion-icon>
+                </a>   
+            </nb-card-header>
+            <nb-card-body>
+
+                <nb-list>
+                    <nb-list-item>
+                        <h6 style ='width:58rem'><ion-icon name="search-outline"></ion-icon></h6>
+                        <span style ='width:15rem'><input type="text"  class="search-input" placeholder="Search by Email" [(ngModel)]="srchEmail" id="listSearch1"></span>
+                              <div>
+                        <a (click)="resetSearch()">
+                            <ion-icon name="refresh-outline"></ion-icon>
+                        </a>   
+                        </div>
+                    </nb-list-item>    
+                </nb-list> 
+
+                <nb-list>
+                    <nb-list-item>
+                        <h6 style ='width:22rem'>Username</h6> 
+                        <h6 style ='width:22rem'>Name</h6> 
+                        <h6 style ='width:20rem'>Email Address</h6> 
+                    </nb-list-item>    
+                </nb-list  >
+                <nb-list>
+                    <nb-list-item class="anchor" *ngFor="let user of AdminUsers | searchEmail: srchEmail; let i=index; ">                        
+                        <h7  style ='width:18rem'>{{user.username}}</h7> 
+                        <h7  style ='width:19rem'>{{user.firstname}}&nbsp;{{user.lastname}}</h7>
+                        <h7  style ='width:20rem'>{{user.email}}</h7> 
+                        <div>
+                            <a (click)="viewAdmin(user)">
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </a>
+                            <a (click)="editAdmin(user)" class="plus">
+                                <ion-icon name="create-outline"></ion-icon>
+                            </a>
+                            <a (click)="deleteAdmin(user)" class="plus">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+        </nb-card>
+    </div>

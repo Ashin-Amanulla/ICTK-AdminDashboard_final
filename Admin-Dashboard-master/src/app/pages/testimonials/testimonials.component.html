@@ -1,0 +1,53 @@
+<div class="lists row">
+    <div class="col-md-12 col-lg-12 col-xxxl-6 ">
+
+
+        <nb-card class="list-card">
+            <nb-card-header>
+                <h5>Testimonials</h5>
+                <a [hidden]="addAccess()" (click)="addTestimonial()" class="plus">
+                    <ion-icon name="add-outline"></ion-icon>
+                </a>
+                <a [hidden]="editAccess()"  (click)="saveTestimonialsIndex()" class="plus">
+                    <ion-icon name="checkmark"></ion-icon>
+                </a>
+                <a [hidden]="editAccess()"  (click)="resetTestimonialsIndex()" class="plus">
+                    <ion-icon name="close"></ion-icon>
+                </a>
+            </nb-card-header>
+            <nb-card-body>
+                <nb-list>
+                    <nb-list-item>
+                        <h6 style="width:19em">#</h6>
+                        <h6 style="width:25em">Name</h6>
+                        <h6 style="width:38em">Position</h6>
+                        <h6 style="width:45em">Course</h6>
+
+                    </nb-list-item>
+
+                </nb-list>
+                <nb-list cdkDropList (cdkDropListDropped)="onDrop($event)">
+                    <nb-list-item class="anchor" *ngFor="let testimonial of testimonials; let i=index;" cdkDrag>
+                        <h7 style='width: 5em'> {{i+1}}</h7>
+                        <h7 style='width: 9em'> {{testimonial.name}}</h7>
+                        <h7 style='width: 15em'> {{testimonial.position}}</h7>
+                        <h7 style='width: 15em'> {{testimonial.course_title}}</h7>
+                        <div>
+                            <a (click)="viewTestimonial(testimonial)">
+                                <ion-icon name="eye-outline"></ion-icon>
+                            </a>
+                            <a [hidden]="editAccess()"  (click)="editTestimonial(testimonial)">
+                                <ion-icon name="create-outline"></ion-icon>
+                            </a>
+                            <a [hidden]="deleteAccess()" (click)="deleteTestimonial(testimonial)">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </a>
+                        </div>
+
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+
+        </nb-card>
+    </div>
+</div>

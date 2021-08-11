@@ -1,0 +1,42 @@
+<div class="lists row">
+    <div class="col-md-12 col-lg-12 col-xxxl-6">
+        <nb-card class="list-card">
+            <nb-card-header> <h5>Events</h5> 
+                <a [hidden]="addAccess()" (click)="addevents()" class="plus">
+                    <ion-icon name="add-outline"></ion-icon>
+                </a>   
+                <a [hidden]="editAccess()" (click)="saveEventIndex()" class="plus">
+                    <ion-icon name="checkmark"></ion-icon>
+                </a>
+                <a [hidden]="editAccess()" (click)="resetEventIndex()" class="plus">
+                    <ion-icon name="close"></ion-icon>
+                </a>           
+            </nb-card-header>
+            <nb-card-body>
+                <nb-list>
+                    <nb-list-item>
+                        <h6 style ='width:17rem'>#</h6>
+                        <h6 style ='width:21rem'>Event</h6> 
+                        <h6 style ='width:5rem'>Date</h6> 
+                    </nb-list-item>    
+                </nb-list>
+                <nb-list cdkDropList  (cdkDropListDropped)="onDrop($event)"  >
+                    <nb-list-item class="anchor" *ngFor="let event of events ; let i=index; " cdkDrag>
+                        <h7 style ='width:16rem'>{{i+1}}</h7>
+                        <h7 style ='width:20rem'>{{event.name}}</h7>
+                        <h7 style ='width:20rem'>{{event.date}}</h7> 
+                        <div>
+                            <a (click)="viewEvent(event)"> <ion-icon name="eye-outline"></ion-icon>
+                            </a >
+                            <a [hidden]="editAccess()" (click)="editEvent(event)" class="plus">
+                                <ion-icon name="create-outline"></ion-icon>
+                            </a>
+                            <a [hidden]="deleteAccess()" (click)="deleteEvent(event)" class="plus">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </a>
+                        </div>
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+        </nb-card>
+    </div>

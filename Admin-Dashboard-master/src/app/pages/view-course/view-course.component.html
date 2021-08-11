@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-lg-12">
+    <nb-card>
+      <nb-card-header>View Course</nb-card-header>
+      <nb-card-body>
+        <form novalidate #RegisterForm="ngForm">
+          <div class="form-group row">
+            <label for="inputEmail1" class="label col-lg-2 col-form-label">Course Title</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #title='ngModel'   name="name1" [(ngModel)]="course.course_title" disabled id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Short Description</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100' #shortDesc='ngModel'   name="shortDesc" [(ngModel)]="course.course_short_desc" readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail1" class="label col-lg-2 col-form-label">Registration Status</label>
+            <div class="col-lg-10">
+              <select class="form-select " #Reg_Status='ngModel'   name="Reg_Status" [(ngModel)]="course.Reg_Status"  disabled readonly aria-label="Default select example" style="width:100%; height:2em"> 
+                <option selected>Choose from the list</option>
+                <option value="0">Registration Closed</option>
+                <option value="1">Registration Open</option>
+                <option value="2">Coming Soon</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail1"  class="label col-lg-2 col-form-label">Rating</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #Rating='ngModel'   name="Rating" [(ngModel)]="course.Rating"  disabled  id="exampleFormControlInput1" placeholder="Rating between 1-5">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputEmail1" class="label col-lg-2 col-form-label">Course Category</label>
+            <div class="col-lg-10">
+              <select class="form-select " #Category='ngModel'   name="Category" [(ngModel)]="course.Category"  disabled readonly aria-label="Default select example" style="width:100%; height:2em"> 
+                <option selected>Choose from the list</option>
+                <option value="Retail">Retail</option>
+                <option value="Institutional">Institutional</option>
+                <option value="Corporate">Corporate</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">About Course</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100' #about_course='ngModel'   name="about_course" [(ngModel)]="course.about_course"   readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Course Eligibility</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100' #eligibility='ngModel'   name="eligibility" [(ngModel)]="course.eligibility"  disabled readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Course Fee</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100'  #course_fee='ngModel'   name="course_fee" [(ngModel)]="course.course_fee"  disabled readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Entrance Exam Details</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100' #entrance_details='ngModel'   name="entrance_details" [(ngModel)]="course.entrance_details"  disabled readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Refund Policy</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100' #refund_policy='ngModel'   name="refund_policy" [(ngModel)]="course.refund_policy"  disabled readonly></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-lg-2 label">Important Dates</label>
+            <div class="col-lg-10">
+              <textarea rows="3" class='width-100'  #dates='ngModel'   name="dates" [(ngModel)]="course.dates"   readonly></textarea>
+            </div>
+          </div>
+          <div class=" row">
+            <label class="col-lg-2 label">Course Image</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #course_image='ngModel'   name="course_image" [(ngModel)]="course.course_image"  readonly id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class=" row">
+            <label class="col-lg-2 label">Course Delivery</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #course_delivery='ngModel'   name="course_delivery" [(ngModel)]="course.course_delivery"  readonly id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class=" row">
+            <label class="col-lg-2 label">Internship Partner</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #internship_partner='ngModel'   name="internship_partner" [(ngModel)]="course.internship_partner"  readonly id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class=" row">
+            <label class="col-lg-2 label">Knowledge Partner</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #knowledge_partner='ngModel'   name="knowledge_partner" [(ngModel)]="course.knowledge_partner"  readonly id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>        
+          <br>  
+          <div class=" row">
+            <label class="col-lg-2 label">Sponsour Partner</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" #sponser_partner='ngModel'   name="sponser_partner" [(ngModel)]="course.sponser_partner"  readonly id="exampleFormControlInput1" placeholder="">
+            </div>
+          </div>
+          <br>
+          <div class="form-group row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-10" >
+              <div class="form-check" readonly >
+                <input  class="form-check-input" type="checkbox" id="flexCheckDefault"  name="active" [(ngModel)]="course.active" disabled>
+                <label class="form-check-label" for="flexCheckDefault">
+                  Active
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-lg-6"></div>
+            <div class="col-lg-6">
+              <button type="button" class="btn btn-danger btn-sm" (click)='closeForm()'>Close</button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+</div>
+</div>
