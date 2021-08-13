@@ -8,8 +8,8 @@ export class CoursesService {
 
   constructor(public http: HttpClient) { }
 
-  // server_address :string ='/api';
-  server_address :string ='http://localhost:5000';
+  server_address :string ='/api';
+  // server_address :string ='http://localhost:5000';
 
   getCourses() {
     return this.http.get(`${this.server_address}/course/CourseList`)

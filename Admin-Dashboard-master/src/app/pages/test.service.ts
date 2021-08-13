@@ -11,8 +11,8 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  // server_address :string ='/api';
-  server_address :string ='http://localhost:5000';
+  server_address :string ='/api';
+  // server_address :string ='http://localhost:5000';
 
   gettestimonial(id: any) {
     return this.http.get(`${this.server_address}/testimonials/testimonial/` + id);

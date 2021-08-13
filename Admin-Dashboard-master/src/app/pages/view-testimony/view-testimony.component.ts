@@ -14,7 +14,7 @@ export class ViewTestimonyComponent implements OnInit {
   name:any;
   position:any;
   organisation:any;
-  testimonial:any;
+  testimony:any;
   course_title:any; 
 
   constructor(private testService:TestService, private router:Router, private route: ActivatedRoute) { }
@@ -30,7 +30,7 @@ export class ViewTestimonyComponent implements OnInit {
     this.position =this.testimonialItem.position;
     this.organisation =this.testimonialItem.organisation;
     this.course_title =this.testimonialItem.course_title;  
-    this.testimonial =this.testimonialItem.testimonial;
+    this.testimony =this.testimonialItem.testimony;
   })
   }
 

@@ -33,12 +33,12 @@ app.get('/', function (req, res) {
 app.post('/testimonial/update', (req, res) => {
 
     var item = {
-        name : req.body.name,
-        position : req.body.position,
-        organisation : req.body.organisation,
-        testimonial : req.body.testimonial,
-        course_title : req.body.course_title,
-        image : req.body.image
+        name: req.body.name,
+        position: req.body.position,
+        organisation: req.body.organisation,
+        testimony: req.body.testimony,
+        course_title: req.body.course_title,
+        image: req.body.image
     }
 
     let _id = req.body._id;
@@ -91,10 +91,11 @@ app.post('/testimony/insert', function (req, res) {
         name: req.body.name,
         position: req.body.position,
         organisation: req.body.organisation,
-        testimonial: req.body.testimonial,
+        testimony: req.body.testimony,
         course_title: req.body.course_title,
         image: req.body.image,
     }
+
 
     var testimonial = new Testimonialdata(testimonial);
     testimonial.save().then(function (data) {

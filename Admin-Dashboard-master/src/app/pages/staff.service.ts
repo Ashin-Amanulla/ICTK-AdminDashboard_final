@@ -8,8 +8,8 @@ export class StaffService {
 
   constructor(private http: HttpClient) { }
 
-    // server_address :string ='/api';
-  server_address :string ='http://localhost:5000';
+    server_address :string ='/api';
+  // server_address :string ='http://localhost:5000';
 
 
   getstaff(id: any) {
