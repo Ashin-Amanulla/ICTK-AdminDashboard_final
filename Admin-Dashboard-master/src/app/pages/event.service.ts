@@ -9,7 +9,7 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  server_address: string = '/api';
+  server_address :string ='http://65.1.1.32:5000/api';
   // server_address :string ='http://localhost:5000';
 
   getevent(id: any) {
