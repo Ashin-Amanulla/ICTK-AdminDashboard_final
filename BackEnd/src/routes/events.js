@@ -1,7 +1,7 @@
 const express = require('express');
 let app = express.Router();
 const jwt = require('jsonwebtoken');
-const EventData = require('../modal/EventData');
+const Eventdata = require('../modal/Eventdata');
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const path = require('path');
@@ -25,7 +25,7 @@ app.post('/event-insert', function (req, res) {
 
 
   }
-  var eventAdd = new EventData(event);
+  var eventAdd = new Eventdata(event);
   eventAdd.save().then(function (data) {
     res.send(true)
   }).catch(function (error) {
@@ -41,7 +41,7 @@ app.post('/event/remove', (req, res) => {
   console.log(req.body);
   id = req.body._id
   console.log(` inside remove ${id}`);
-  EventData.deleteOne({ '_id': id })
+  Eventdata.deleteOne({ '_id': id })
     .then(function (event) {
       console.log('success')
       res.send(true);
@@ -52,7 +52,7 @@ app.post('/event/remove', (req, res) => {
 app.get('/event/:id', (req, res) => {
 
   const id = req.params.id;
-  EventData.findOne({ "_id": id })
+  Eventdata.findOne({ "_id": id })
     .then((event) => {
       res.send(event);
     });
@@ -79,7 +79,7 @@ app.post('/event/update', (req, res) => {
   let id = req.body._id;
   let updateT = { $set: item };
 
-  EventData.findByIdAndUpdate({ _id: id }, updateT)
+  Eventdata.findByIdAndUpdate({ _id: id }, updateT)
     .then((respond) => {
       if (respond) {
         console.log('mongoDb updated successfully for Course')
@@ -102,7 +102,7 @@ app.put('/events/updateIndex', (req, res) => {
   name = req.body.name;
   index = req.body.index;
   console.log(`update of ${name} with value ${index}`);
-  EventData.findByIdAndUpdate({ "_id": id },
+  Eventdata.findByIdAndUpdate({ "_id": id },
     { $set: { "index": index } })
     .then(function () {
       res.send();
@@ -113,7 +113,7 @@ app.put('/events/updateIndex', (req, res) => {
 //getting event data
 app.get('/events', function (req, res) {
 
-  EventData.find().sort({ index: 1 })
+  Eventdata.find().sort({ index: 1 })
     .then(function (events) {
       res.send(events);
     });

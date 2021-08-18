@@ -45,35 +45,35 @@ function verifyToken(req, res, next) {//token
 //routing starts
 
 const login = require('./src/routes/login'); //login page
-app.use('/login', login);
+app.use('/api/login', login);
 
-app.get('/logout', function (req, res) { //logout
+app.get('/api/logout', function (req, res) { //logout
   req.session.destroy();
 });
 
 const course = require('./src/routes/courses'); //course page
-app.use('/course',verifyToken, course);
+app.use('/api/course',verifyToken, course);
 
 const enquiry = require('./src/routes/enquiry'); //enquiry page
-app.use('/enquiryMenu', verifyToken, enquiry);
+app.use('/api/enquiryMenu', verifyToken, enquiry);
 
 const staff = require('./src/routes/staff'); //enquiry page
-app.use('/staffMenu', verifyToken, staff);
+app.use('/api/staffMenu', verifyToken, staff);
 
 const application = require('./src/routes/application'); //partnership &corporate application page
-app.use('/application',verifyToken, application);
+app.use('/api/application',verifyToken, application);
 
 const registration = require('./src/routes/registration'); //course registration page
-app.use('/registration', verifyToken, registration);
+app.use('/api/registration', verifyToken, registration);
 
 const testimonials = require('./src/routes/testimonials'); // testimonials page
-app.use('/testimonials', verifyToken, testimonials);
+app.use('/api/testimonials', verifyToken, testimonials);
 
 const events = require('./src/routes/events'); // testimonials page
-app.use('/events', verifyToken, events);
+app.use('/api/events', verifyToken, events);
 
 const AdminUser = require('./src/routes/AdminUser'); //course registration page
-app.use('/AdminUser', verifyToken, AdminUser);
+app.use('/api/AdminUser', verifyToken, AdminUser);
 
 
 
