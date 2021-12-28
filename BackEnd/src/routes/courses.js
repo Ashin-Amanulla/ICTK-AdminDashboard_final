@@ -42,11 +42,11 @@ app.get('/CourseCategory', function (req, res) {
         });
 });
 
-app.post('/Course/insert', function (req, res) {
+app.post('/Course/insert',  function (req, res) {
 
     var indx;
 
-    Coursedata.findOne().sort('-index').exec(function (err, course) {
+    Coursedata.findOne().sort('-index').exec( function (err, course) {
         indx = course.index;
         indx = indx + 1;
 

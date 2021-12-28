@@ -7,8 +7,8 @@ import { Router } from '@angular/router'
 })
 export class AuthService {
 
-  //  server_address :string ='http://localhost:5000/api';
-  server_address :string ='http://65.1.1.32:5000/api';
+   server_address :string ='http://localhost:5000/api';
+  // server_address :string ='http://65.1.1.32:5000/api';
   //fasfsafsfsa
 
 

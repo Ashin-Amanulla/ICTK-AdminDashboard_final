@@ -11,12 +11,14 @@ import { AuthService } from '../auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
 
   user = {
     email: '',
     password: ''
   }
+  
 
   constructor(private _auth: AuthService,
     private _router: Router,
